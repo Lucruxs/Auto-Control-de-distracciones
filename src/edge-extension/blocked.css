@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #fee2e2, #fef2f2 60%);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+  width: min(90%, 500px);
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  color: #b91c1c;
+}
+
+.url {
+  word-break: break-all;
+  background: #f1f5f9;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 0.9rem;
+}

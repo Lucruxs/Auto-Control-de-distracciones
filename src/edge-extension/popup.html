@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Control parental</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="popup">
+  <header>
+    <h1>Control parental</h1>
+    <p id="statusText">Cargando…</p>
+  </header>
+  <section>
+    <label for="pinInput">PIN</label>
+    <input id="pinInput" type="password" placeholder="••••" autocomplete="current-password" />
+    <button id="toggleButton">Alternar modo solo permitidos</button>
+    <p id="feedback" class="muted"></p>
+  </section>
+  <footer>
+    <button id="openOptions">Abrir configuración</button>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>

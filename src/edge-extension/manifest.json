@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Control Parental Edge Local",
+  "description": "Bloquea y permite URLs específicas en Edge con modo solo permitidos y sincronización manual por archivos.",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Control parental"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "blocked.js",
+        "blocked.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
