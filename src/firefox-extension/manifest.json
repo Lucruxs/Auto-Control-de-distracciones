@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Control Parental Firefox",
+  "description": "Bloquea y permite URLs específicas en Firefox con modo solo permitidos y sincronización manual por archivos.",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Control parental"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    "blocked.html",
+    "blocked.js",
+    "blocked.css"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "control-parental@local"
+    }
+  }
+}

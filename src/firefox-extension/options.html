@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Configuración | Control parental</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Control parental para Firefox</h1>
+    <p class="muted">Gestiona listas, modo solo permitidos y archivos de configuración.</p>
+  </header>
+
+  <section id="setupSection" hidden>
+    <h2>Crear PIN</h2>
+    <p>Define un PIN de 4 a 8 dígitos para proteger la configuración.</p>
+    <label for="setupPin">PIN</label>
+    <input id="setupPin" type="password" maxlength="8" />
+    <label for="setupPinConfirm">Confirmar PIN</label>
+    <input id="setupPinConfirm" type="password" maxlength="8" />
+    <label for="setupHint">Pista (opcional)</label>
+    <input id="setupHint" type="text" />
+    <button id="setupPinButton">Guardar PIN</button>
+    <p id="setupFeedback" class="muted"></p>
+  </section>
+
+  <section id="loginSection" hidden>
+    <h2>Autenticación</h2>
+    <label for="loginPin">PIN</label>
+    <input id="loginPin" type="password" maxlength="8" />
+    <button id="loginButton">Desbloquear panel</button>
+    <p id="loginFeedback" class="muted"></p>
+  </section>
+
+  <section id="appSection" hidden>
+    <div class="list-container">
+      <div>
+        <h3>Estado</h3>
+        <p id="statusBadge" class="badge idle">Modo inactivo</p>
+        <p class="muted">Última actualización: <span id="lastUpdated">--</span></p>
+        <button id="toggleAllowOnly">Alternar modo "solo permitidos"</button>
+      </div>
+      <div>
+        <h3>Estadísticas</h3>
+        <p>Permitidos: <strong id="allowedCount">0</strong></p>
+        <p>Bloqueados: <strong id="blockedCount">0</strong></p>
+      </div>
+    </div>
+
+    <section>
+      <h2>Listas</h2>
+      <div class="list-container">
+        <div>
+          <h3>Permitidos</h3>
+          <form id="allowedForm">
+            <label for="allowedPattern">Patrón o URL</label>
+            <input id="allowedPattern" required />
+            <label for="allowedNotes">Notas (opcional)</label>
+            <input id="allowedNotes" />
+            <button>Añadir a permitidos</button>
+          </form>
+          <ul id="allowedList" class="rule-list"></ul>
+        </div>
+        <div>
+          <h3>Bloqueados</h3>
+          <form id="blockedForm">
+            <label for="blockedPattern">Patrón o URL</label>
+            <input id="blockedPattern" required />
+            <label for="blockedNotes">Notas (opcional)</label>
+            <input id="blockedNotes" />
+            <button class="secondary">Añadir a bloqueados</button>
+          </form>
+          <ul id="blockedList" class="rule-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Exportar configuración</h2>
+      <p class="muted">Descarga un archivo JSON para copiarlo a otro equipo.</p>
+      <button id="exportButton">Exportar</button>
+      <p id="exportFeedback" class="muted"></p>
+    </section>
+
+    <section>
+      <h2>Importar configuración</h2>
+      <p class="muted">Selecciona un archivo exportado previamente. Si es antiguo, deberás confirmar.</p>
+      <input id="importInput" type="file" accept="application/json" />
+      <button id="importButton">Importar</button>
+      <p id="importFeedback" class="muted"></p>
+    </section>
+  </section>
+
+  <script src="options.js"></script>
+</body>
+</html>
